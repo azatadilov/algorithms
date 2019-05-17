@@ -1,0 +1,33 @@
+public class Program {
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        System.out.println(digitSum(5,6));
+    }
+
+public static int integerNumber(int real, int integer) { // это сторока с вашего, думал, будет нужна такая строка
+     if (real == 0 || integer == 0) {
+            return 0;
+        }
+        else if (real == 1) {
+            return integer;
+        }
+        else if (integer == 1) {
+            return real;
+        }
+        else if (real < integer) {
+            return integerNumber(real, integer - 1) + real;
+        }
+        else {
+            return integerNumber(integer, real - 1) + integer;
+        }
+    }
+
+    public static int digitSum(int real, int integer) {
+        int result = 1;
+        for (int i = 1; i <= integer; i++) {
+            result = result*real;
+        }
+        return result;
+    }
+
+}
